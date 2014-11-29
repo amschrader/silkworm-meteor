@@ -9,4 +9,7 @@ insecure
 reywood:bootstrap3-sass
 iron:router
 ravelry
+accounts-ravelry
+accounts-ui
+ravelry-api
 

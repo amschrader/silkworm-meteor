@@ -1,17 +1,15 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault("counter", 0);
+  Session.setDefault("projects", []);
 
   Template.home.helpers({
-    counter: function () {
-      return Session.get("counter");
+    projects: function() {
+      return Session.get("projects");
     }
   });
 
-  Template.home.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
-    }
-  });
+  Template.home.rendered = function() {
+    Meteor.call('getProjects', function(error, results) {
+      Session.set("projects", results.projects);
+    });
+  }
 }

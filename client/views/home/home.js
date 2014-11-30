@@ -9,7 +9,10 @@ if (Meteor.isClient) {
 
   Template.home.rendered = function() {
     Meteor.call('getProjects', function(error, results) {
-      Session.set("projects", results.projects);
+      if (results) {
+        var projects = results.projects || [];
+        Session.set("projects", projects);
+      }
     });
   }
 }

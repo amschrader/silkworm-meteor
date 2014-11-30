@@ -21,8 +21,6 @@ Meteor.startup(function () {
 
 Meteor.methods({
   getProjects: function () {
-    var data = ravelry.getProjects().data;
-    console.log(data);
-    return data;
+    return ravelry.getProjects().data;
   }
 });

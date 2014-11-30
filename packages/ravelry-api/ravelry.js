@@ -49,6 +49,11 @@ Ravelry.prototype.userProfile = function() {
 
 Ravelry.prototype.getProjects = function() {
   var user = Meteor.user();
-  var username = user.profile.username;
-  return this.get('projects/' + username + '/list.json');
+  
+  if (user) {
+    var username = user.profile.username;
+    return this.get('projects/' + username + '/list.json');
+  }
+
+  return {};
 };

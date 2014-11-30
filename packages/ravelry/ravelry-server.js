@@ -13,8 +13,8 @@ Oauth.registerService('ravelry', 1, urls, function(oauthBinding) {
   var identity = oauthBinding.get('https://api.ravelry.com/current_user.json').data;
 
   var serviceData = {
-    id: identity.id,
-    screenName: identity.username,
+    id: identity.user.id,
+    screenName: identity.user.username,
     accessToken: OAuth.sealSecret(oauthBinding.accessToken),
     accessTokenSecret: OAuth.sealSecret(oauthBinding.accessTokenSecret)
   };
@@ -22,7 +22,7 @@ Oauth.registerService('ravelry', 1, urls, function(oauthBinding) {
   return {
     serviceData: serviceData,
     options: {
-      profile: identity
+      profile: identity.user
     }
   };
 });

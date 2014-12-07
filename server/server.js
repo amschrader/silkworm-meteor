@@ -1,12 +1,12 @@
 if (Meteor.isServer) {
-  Meteor.startup(function () {
+  Meteor.startup(function() {
     // code to run on server at startup
   });
   
 }
 var ravelry = new Ravelry();
 
-Meteor.startup(function () {
+Meteor.startup(function() {
 
   Accounts.loginServiceConfiguration.remove({
       service : 'ravelry'
@@ -20,7 +20,14 @@ Meteor.startup(function () {
 });
 
 Meteor.methods({
-  getProjects: function () {
-    return ravelry.getProjects().data;
+  getProjects: function(username) {
+    if (!username) {
+      var user = Meteor.user()
+      if (user) {
+        username = user.profile.username;
+      }
+    }
+    console.log("server: " + username);
+    return ravelry.getProjects(username).data;
   }
 });

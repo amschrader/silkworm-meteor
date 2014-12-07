@@ -8,8 +8,8 @@ autopublish
 insecure
 reywood:bootstrap3-sass
 iron:router
-ravelry
-accounts-ravelry
 accounts-ui
-ravelry-api
+amschrader:ravelry
+amschrader:accounts-ravelry
+amschrader:ravelry-api
 

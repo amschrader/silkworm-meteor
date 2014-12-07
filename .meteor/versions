@@ -1,8 +1,10 @@
 accounts-base@1.1.2
 accounts-oauth@1.1.2
-accounts-ravelry@0.0.0
 accounts-ui-unstyled@1.1.4
 accounts-ui@1.1.3
+amschrader:accounts-ravelry@0.1.0
+amschrader:ravelry-api@0.1.0
+amschrader:ravelry@0.1.0
 application-configuration@1.0.3
 autopublish@1.0.1
 autoupdate@1.1.3
@@ -53,8 +55,6 @@ oauth@1.1.2
 observe-sequence@1.0.3
 ordered-dict@1.0.1
 random@1.0.1
-ravelry-api@0.0.0
-ravelry@0.0.0
 reactive-dict@1.0.4
 reactive-var@1.0.3
 reload@1.1.1

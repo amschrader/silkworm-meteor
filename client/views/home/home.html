@@ -1,5 +1,9 @@
 <template name="home">
   {{#each projects}}
-    <p>{{name}}</p>
+    <a href="/project/{{id}}">{{name}}</a><br>
   {{/each}}  
+</template>
+
+<template name="project">
+  hi
 </template>
